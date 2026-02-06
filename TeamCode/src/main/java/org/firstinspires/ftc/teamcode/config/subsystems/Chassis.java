@@ -7,6 +7,7 @@ import com.seattlesolvers.solverslib.geometry.Vector2d;
 import com.seattlesolvers.solverslib.hardware.motors.Motor;
 import com.seattlesolvers.solverslib.hardware.motors.MotorEx;
 
+
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.teamcode.config.core.constants.ChassisConfiguration;
 import org.firstinspires.ftc.teamcode.config.subsystems.helpers.AsymmetricLowPassFilter;
@@ -28,8 +29,10 @@ public class Chassis extends SubsystemBase implements ChassisConfiguration {
         Motor rightRear = new MotorEx(hardwareMap, RIGHT_REAR_MOTOR);
         Motor leftRear = new MotorEx(hardwareMap, LEFT_REAR_MOTOR);
 
-        leftFront.setInverted(true);
-        leftRear.setInverted(true);
+        leftFront.setInverted(false);
+        leftRear.setInverted(false);
+        rightFront.setInverted(true);
+        rightRear.setInverted(true);
 
         rightFront.setZeroPowerBehavior(Motor.ZeroPowerBehavior.BRAKE);
         leftFront.setZeroPowerBehavior(Motor.ZeroPowerBehavior.BRAKE);
