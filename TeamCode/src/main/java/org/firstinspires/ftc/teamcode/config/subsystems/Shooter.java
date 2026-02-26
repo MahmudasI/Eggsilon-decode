@@ -17,7 +17,7 @@ public class Shooter extends SubsystemBase implements ShooterConfiguration {
     private double liftPos;
 
     double STARTING_LIFT_POS = 0.55; // this is the position to witch level lift raises for shooting
-    double SHOOTING_LIFT_POS = 0.25; //this is the starting position of lift and/or lift lowest position
+    double SHOOTING_LIFT_POS = 0.35; //this is the starting position of lift and/or lift lowest position
 
     boolean isLiftUp;
     public Shooter(HardwareMap hardwareMap, Telemetry telemetry) {

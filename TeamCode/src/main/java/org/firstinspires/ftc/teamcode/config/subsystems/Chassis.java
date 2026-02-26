@@ -31,8 +31,8 @@ public class Chassis extends SubsystemBase implements ChassisConfiguration {
 
         leftFront.setInverted(false);
         leftRear.setInverted(false);
-        rightFront.setInverted(true);
-        rightRear.setInverted(true);
+        rightFront.setInverted(false);
+        rightRear.setInverted(false);
 
         rightFront.setZeroPowerBehavior(Motor.ZeroPowerBehavior.BRAKE);
         leftFront.setZeroPowerBehavior(Motor.ZeroPowerBehavior.BRAKE);

@@ -6,6 +6,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 import com.seattlesolvers.solverslib.gamepad.GamepadEx;
 
 import org.firstinspires.ftc.teamcode.config.subsystems.Chassis;
+import org.firstinspires.ftc.teamcode.config.subsystems.Hood;
 import org.firstinspires.ftc.teamcode.config.subsystems.Intake;
 import org.firstinspires.ftc.teamcode.config.subsystems.Shooter;
 @TeleOp(group = "", name = "drivetest")
@@ -15,7 +16,8 @@ public class drivetest extends LinearOpMode {
     public void runOpMode() {
 
         Chassis chassis = new Chassis(hardwareMap, telemetry);
-        //Shooter shooter = new Shooter(hardwareMap, telemetry);
+        Shooter shooter = new Shooter(hardwareMap, telemetry);
+        Hood hood = new Hood(hardwareMap, telemetry);
         //Intake intake = new Intake(hardwareMap, telemetry);
 
         Servo lift;
@@ -46,15 +48,15 @@ public class drivetest extends LinearOpMode {
             //intake.toggle();
             //}
 
-            //if(gamepad1.xWasPressed()){
-            //shooter.incrementLift(-0.1);
-            //}
-            //if (gamepad1.yWasPressed()){
-            //shooter.incrementLift(0.1);
-            //}
-            //if(gamepad1.rightBumperWasPressed()){
-            // shooter.toggleLift();
-            //}
+            if(gamepad1.dpadDownWasPressed()){
+                hood.incrementHood(-0.05);
+            }
+            if (gamepad1.dpadUpWasPressed()){
+                hood.incrementHood(0.05);
+            }
+            if(gamepad1.rightBumperWasPressed()){
+                shooter.toggleLift();
+            }
             telemetry.update();
         }
     }
