@@ -12,7 +12,7 @@ import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.teamcode.config.core.constants.ChassisConfiguration;
 import org.firstinspires.ftc.teamcode.config.subsystems.helpers.AsymmetricLowPassFilter;
 
-public class Chassis extends SubsystemBase implements ChassisConfiguration {
+public class        Chassis extends SubsystemBase implements ChassisConfiguration {
     private final MecanumDrive drive;
     public static double motorPower = 0.5; //greitis
     public static double acceleration_a = 0.5; //pagreitis
@@ -29,9 +29,9 @@ public class Chassis extends SubsystemBase implements ChassisConfiguration {
         Motor rightRear = new MotorEx(hardwareMap, RIGHT_REAR_MOTOR);
         Motor leftRear = new MotorEx(hardwareMap, LEFT_REAR_MOTOR);
 
-        leftFront.setInverted(false);
+        leftFront.setInverted(true);
         leftRear.setInverted(false);
-        rightFront.setInverted(false);
+        rightFront.setInverted(true);
         rightRear.setInverted(false);
 
         rightFront.setZeroPowerBehavior(Motor.ZeroPowerBehavior.BRAKE);

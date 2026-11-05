@@ -8,7 +8,6 @@ import com.seattlesolvers.solverslib.gamepad.GamepadEx;
 import org.firstinspires.ftc.teamcode.config.subsystems.Chassis;
 import org.firstinspires.ftc.teamcode.config.subsystems.Intake;
 import org.firstinspires.ftc.teamcode.config.subsystems.Shooter;
-import org.firstinspires.ftc.teamcode.config.subsystems.Sorting;
 
 @TeleOp(group = "", name = "EggsilonTeleOp")
 public class EggsilonTeleOp extends LinearOpMode {
@@ -21,7 +20,7 @@ public class EggsilonTeleOp extends LinearOpMode {
         Chassis chassis = new Chassis(hardwareMap, telemetry);
         Shooter shooter = new Shooter(hardwareMap, telemetry);
         Intake intake = new Intake(hardwareMap, telemetry);
-        Sorting sorting = new Sorting(hardwareMap, telemetry);
+        //Sorting sorting = new Sorting(hardwareMap, telemetry);
 
         Servo lift;
         lift = hardwareMap.get(Servo.class, "lift");
@@ -60,6 +59,8 @@ public class EggsilonTeleOp extends LinearOpMode {
             }
 
             if(gamepad1.rightBumperWasPressed()){
+                shooter.toggleLift();
+                sleep(1000);
                 shooter.toggleLift();
             }
             prevStateA = gamepad1.a;
